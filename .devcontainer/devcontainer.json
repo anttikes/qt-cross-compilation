@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+	"name": "comfile-sysroot",
+	"build":{
+		"dockerfile": "Dockerfile"		
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"C_Cpp.default.name": "Linux",
+				"C_Cpp.default.includePath": [
+                	"${workspaceFolder}/**",
+                	"/usr/include/aarch64-linux-gnu/qt5/**"
+            	],
+            	"C_Cpp.default.defines": [],
+				"C_Cpp.default.compilerPath": "/usr/bin/aarch64-linux-gnu-gcc",
+            	"C_Cpp.default.cStandard": "c11",
+            	"C_Cpp.default.cppStandard": "gnu++11",
+            	"C_Cpp.default.intelliSenseMode": "linux-gcc-arm64",
+				"files.associations": {
+					"qapplication": "cpp"
+				}
+			},
+			"extensions": [
+				"ms-vscode.cpptools-extension-pack",
+				"ms-azuretools.vscode-docker",				
+				"theqtcompany.qt-qml"
+				//"theqtcompany.qt-cpp"
+			]
+		}
+	},
+
+	// Use root as the user inside the container
+	"remoteUser": "root"
+}
